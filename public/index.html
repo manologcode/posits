@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Post it - Aplicacion para jugar con postit en el ordenadoer</title>
+  <meta name="description" content="Aplicacion online gratuita, para organizar proyectos e ideas con postits">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+  <meta name="theme-color" content="#149438"/>
+
+  <link rel="icon" type="image/png" href="iicons/icons/icon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="iicons/icons/icon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="iicons/icons/icon-96x96.png" sizes="96x96">
+  <!-- Add to home screen for Safari on iOS -->
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="apple-mobile-web-app-title" content="CUINATUR">
+  <link rel="apple-touch-icon" href="iicons/icons/icon-152x152.png">
+  <meta name="msapplication-TileImage" content="iicons/icons/icon-144x144.png">
+  <meta name="msapplication-TileColor" content="#149438">
+
+
+  <meta property="og:title" content="creawww.com - Post it">
+  <meta property="og:url" content="https://creawww.com/post-it/">
+  <meta property="og:description" content="Aplicaci'on de postits online">
+  <meta property="og:image" itemprop="image" content="https://creawww.com/post-it/iicons/iconsocial.png">
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="es_ES" />
+  <script type="application/ld+json">
+   {
+  "@context": "http://schema.org/",
+  "@type": "ImageObject",
+   "url": "https://creawww.com/post-it/iicons/iconsocial.png",
+      "height": 200,
+      "width": 200
+
+   }
+   </script>
+	<link rel="stylesheet" type="text/css" href="js_css/jq/jquery-ui.css">
+	<link rel="stylesheet" type="text/css" href="js_css/style.css">
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-21944713-11"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-21944713-11');
+</script>
+</head>
+<body>
+	<div id="menu" style="margin-left: -210px;">
+		<div class="headermenu"><span id="closeMenu">X</span></div>
+		<div class="btngroup">
+			<a href="#" id="btnEditProy"><img src="iicons/edit.png"></a>
+			<a href="#" id="btnUpProy"></a>
+			<a href="#" id="btnNewProy"><img src="iicons/new.png"></a>
+		</div>
+    <div class="uploadInput">
+			<input type="file" id="buttonFileToLoad" onchange="LoadSaveFiles.inputLoadFile()">
+			<label for="buttonFileToLoad"><img src="iicons/upload.png"> Select File</label>
+		</div>
+		<hr>
+		<ul id="listmenu"></ul>
+	</div>
+
+
+<div id="tablero"></div>
+
+<div id="dialog-form" title="Panel">
+		<form>
+		<fieldset>
+			<p>
+				<label for="newProy">Name: </label>
+				<input type="text" name="newProy" id="newProy" class="text ui-widget-content ui-corner-all" required>
+			</p>
+			<p>
+				<label for="listcanvas">Type</label>
+				<select id="listcanvas"></select>
+			</p>
+		</fieldset>
+		<div class="btngroup">
+			<a href="#" id="btnNewProy" onclick="Board.confirmFormProyect()" alt="New proyect"><img src="iicons/ok.png"></a>
+			<a id="btnDownProy" href="#" onclick="LoadSaveFiles.download()" alt="Download proyect"><img src="iicons/download.png"></a>
+			<a id="confirmDel" href="#" onclick="Board.delProyect()" alt="Confirm delete proyect"><img src="iicons/confirmdel.png"></a>
+			<a href="#" id="btnDelProy" onclick="Board.showConfirmDel()"><img src="iicons/del.png"></a>
+		</div>
+		<img id="imgPre" style="width:300px">
+	</form>
+</div>
+
+
+<script src="js_css/jq/jquery-3.1.1.min.js"></script>
+<script src="js_css/jq/jquery-ui.min.js"></script>
+<script src="js_css/app.js"></script>
+<script src="js_css/postit.js"></script>
+<script src="js_css/board.js"></script>
+<script src="js_css/loadSaveFiles.js"></script>
+</body>
+</html>
